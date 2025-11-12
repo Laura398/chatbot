@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEx - Accueil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            background: #f6f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d6cdf;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #2d6cdf;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 2rem 2rem 2rem;
+            background: linear-gradient(90deg, #e3eafc 60%, #fff 100%);
+        }
+
+        .hero-content {
+            max-width: 500px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: #2d6cdf;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(45, 108, 223, 0.08);
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: #1a4fa0;
+        }
+
+        .hero-img {
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .products-section {
+            padding: 2rem;
+        }
+
+        .products-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 1.5rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(45, 108, 223, 0.10);
+        }
+
+        .product-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: #2d6cdf;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            background: #fff;
+            color: #2d6cdf;
+            border: 2px solid #2d6cdf;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .buy-btn:hover {
+            background: #2d6cdf;
+            color: #fff;
+        }
+
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            color: #888;
+            font-size: 1rem;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-img {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">ShopEx</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Produits</a>
+            <a href="#">Contact</a>
+            <a href="#">Connexion</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-title">Bienvenue sur ShopEx</div>
+            <div class="hero-desc">Découvrez notre sélection de produits tendance, livrés rapidement chez vous. Profitez
+                d'une expérience d'achat moderne et simple !</div>
+            <button class="cta-btn">Voir les produits</button>
+        </div>
+        <img class="hero-img"
+            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=350&q=80"
+            alt="Ecommerce Hero">
+    </section>
+    <section class="products-section">
+        <div class="products-title">Nos produits phares</div>
+        <div class="products-grid">
+            <div class="product-card">
+                <img class="product-img"
+                    src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=120&q=80"
+                    alt="Produit 1">
+                <div class="product-name">Casque Bluetooth</div>
+                <div class="product-price">59,99€</div>
+                <button class="buy-btn">Acheter</button>
+            </div>
+            <div class="product-card">
+                <img class="product-img"
+                    src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=120&q=80"
+                    alt="Produit 2">
+                <div class="product-name">Montre connectée</div>
+                <div class="product-price">129,99€</div>
+                <button class="buy-btn">Acheter</button>
+            </div>
+            <div class="product-card">
+                <img class="product-img"
+                    src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=120&q=80"
+                    alt="Produit 3">
+                <div class="product-name">Enceinte portable</div>
+                <div class="product-price">39,99€</div>
+                <button class="buy-btn">Acheter</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 ShopEx. Tous droits réservés.
+    </footer>
+    <!-- Import script chatbot -->
+    <script src="./chatbot/chatbot.js" theme="blue"></script>
+</body>
+
+</html>
