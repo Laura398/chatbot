@@ -1,0 +1,34 @@
+[
+    {
+        "orderId": 101,
+        "userId": 1,
+        "items": [
+            { "name": "Ordinateur portable", "qty": 1, "price": 1200 },
+            { "name": "Souris", "qty": 1, "price": 25 }
+        ],
+        "total": 1225,
+        "status": "expédiée",
+        "date": "2024-06-15"
+    },
+    {
+        "orderId": 102,
+        "userId": 3,
+        "items": [
+            { "name": "Smartphone", "qty": 2, "price": 800 }
+        ],
+        "total": 1600,
+        "status": "en cours",
+        "date": "2024-06-16"
+    },
+    {
+        "orderId": 103,
+        "userId": 5,
+        "items": [
+            { "name": "Tablette", "qty": 1, "price": 600 },
+            { "name": "Clé USB", "qty": 3, "price": 15 }
+        ],
+        "total": 645,
+        "status": "livrée",
+        "date": "2024-06-17"
+    }
+]
