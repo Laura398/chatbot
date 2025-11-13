@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "email": "alice@example.com",
+    "password": "AlicePass123!",
+    "address": "1 Rue du Chemin, Paris"
+  },
+  {
+    "id": 2,
+    "email": "bob@example.com",
+    "password": "BobSecure456$",
+    "address": "1 Rue du Chemin, Paris"
+  },
+  {
+    "id": 3,
+    "email": "claire@example.com",
+    "password": "ClairePwd789#",
+    "address": "3 Place de la République, Marseille, 13001, France"
+  },
+  {
+    "id": 4,
+    "email": "david@example.com",
+    "password": "Dav1dStrong!",
+    "address": "27 Boulevard Saint-Michel, Toulouse, 31000, France"
+  },
+  {
+    "id": 5,
+    "email": "emilie@example.com",
+    "password": "EmiliePass0#",
+    "address": "5 Rue des Fleurs, Nice, 06000, France"
+  }
+]

@@ -3,8 +3,8 @@ const express = require("express");
 require("dotenv").config();
 const axios = require("axios");
 const app = express();
-const { exec } = require("child_process");
 const fetchDoc = require("./tools/fetchDoc");
+const userDB = require("./tools/usersDB");
 
 app.use(express.json());
 app.use(cors());
@@ -67,6 +67,7 @@ app.post("/chat", async (req, res) => {
             "- Si l'utilisateur pose une question relative au paiement tu dois répondre exactement, tu dois répondre exactement : {'tool':'doc'} et rien d'autre.\n\n" +
             "- Si l'utilisateur pose une question relative au lieu (où on livre, y compris des noms de villes ou), ou à la méthode (comment on livre), ou au suivi d'une livraison, tu dois répondre exactement : {'tool':'doc'} et rien d'autre.\n\n" +
             "- Si la question concerne les frais de livraison, tu dois répondre exactement, tu dois répondre exactement : {'tool':'shipping'} et rien d'autre.\n\n" +
+            "- Si l'utilisateur demande à changer son adresse, tu dois répondre exactement : {'tool':'update_address', 'userId':1, 'value': 'NOUVELLE_ADRESSE'} en adaptant la valeur.\n\n" +
             "N'inventes pas d'informations. Si tu ne sais pas, dis-le clairement.\n\n" +
             "Réponds en français.",
         },
@@ -87,6 +88,21 @@ app.post("/chat", async (req, res) => {
       }
     );
     let botMsg = response.data.choices[0].message.content;
+
+    // tools handling
+    // change address
+    if (botMsg.startsWith("{'tool':'update_address'") || botMsg.startsWith('{"tool":"update_address"')) { 
+      try {
+        const toolObj = JSON.parse(botMsg.replace(/'/g, '"'));
+        
+        if (toolObj.tool === 'update_address' && toolObj.userId && toolObj.value) { 
+          const ok = userDB.updateAddress(toolObj.userId, toolObj.value);
+          botMsg = ok ? "L'adresse a été mise à jour avec succès. Puis-je faire autre chose pour vous aider ?" : "Désolé, je ne peux pas mettre à jour l'adresse pour le moment.";
+        }
+      } catch {
+        botMsg = "Désolé, une erreur est survenue lors de la mise à jour de l'adresse.";
+      }
+    }
 
     res.json({ reply: botMsg });
   } catch (err) {
